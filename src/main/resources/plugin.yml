@@ -1,0 +1,9 @@
+name: MemeShops
+version: ${project.version}
+main: pl.memexurer.memeshops.MemeShopsPlugin
+authors: [Memexurer]
+description: Doyebany plugin na sklepy
+commands:
+  villagercreate:
+    description: Utworz villagera
+    aliases: [shopkeeper, createvillager, villager, makevillager, createshop, makeshop, createshopkeeper, jebacdisa]
