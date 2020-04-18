@@ -30,6 +30,7 @@ public class ShopItemCreationGui extends GuiBuilder {
         GuiItem info = new GuiItem(null, Material.PAPER, "&7Informacja", "&7Zamień środkowy slot tego ekwipunku, na item który chcesz ustawić.", "&7Kliknij na środkowy slot z użyciem shifta aby zapisać zmiany.");
         GuiItem setItem = new GuiItem(e -> {
             if(!e.isShiftClick()) {
+                shopItem.setItem(e.getInventory().getItem(0));
                 e.setCancelled(false);
                 return;
             }

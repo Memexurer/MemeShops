@@ -50,10 +50,6 @@ public class GuiBuilder {
         if (!inventoryItems.containsKey(e.getRawSlot())) return;
         if (inventoryItems.get(e.getRawSlot()).getExecutor() == null) return;
 
-        try {
-            inventoryItems.get(e.getRawSlot()).getExecutor().execute(e);
-        } catch (Exception ex) {
-            new EventException(ex).printStackTrace();
-        }
+        inventoryItems.get(e.getRawSlot()).getExecutor().execute(e);
     }
 }

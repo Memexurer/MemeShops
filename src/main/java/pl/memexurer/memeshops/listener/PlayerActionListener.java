@@ -46,7 +46,13 @@ public class PlayerActionListener implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
         if(e.getInventory() == null || !(e.getInventory().getHolder() instanceof GuiHolder)) return;
-        e.setCancelled(e.getRawSlot() < e.getInventory().getSize());
-        ((GuiHolder) e.getInventory().getHolder()).getBuilder().handleClick(e);
+        GuiHolder holder = (GuiHolder) e.getInventory().getHolder();
+
+        try {
+            e.setCancelled(e.getRawSlot() < e.getInventory().getSize());
+            holder.getBuilder().handleClick(e);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
